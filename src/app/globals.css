@@ -1,0 +1,167 @@
+@import "tailwindcss";
+
+@theme {
+  /* Brand ramp — 500 is sampled directly from the Zentium logo mark (#0077BE) */
+  --color-brand-50: #e8f5fd;
+  --color-brand-100: #cbe9fa;
+  --color-brand-200: #97d2f4;
+  --color-brand-300: #5cb7ea;
+  --color-brand-400: #2198db;
+  --color-brand-500: #0077be;
+  --color-brand-600: #0063a0;
+  --color-brand-700: #004f80;
+  --color-brand-800: #003a5e;
+  --color-brand-900: #00263e;
+  --color-brand-950: #001526;
+
+  /* Accent — used for glows, links and highlights on dark surfaces */
+  --color-accent-300: #7dd3fc;
+  --color-accent-400: #38bdf8;
+  --color-accent-500: #0ea5e9;
+
+  /* Neutral ink scale — the page is dark by default */
+  --color-ink-50: #f8fafc;
+  --color-ink-100: #e9eef5;
+  --color-ink-200: #cbd5e1;
+  --color-ink-300: #94a3b8;
+  --color-ink-400: #79879d;
+  --color-ink-600: #1e293b;
+  --color-ink-700: #131c2b;
+  --color-ink-800: #0c1420;
+  --color-ink-900: #080d16;
+  --color-ink-950: #04070c;
+
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: var(--font-mono), ui-monospace, "SFMono-Regular", monospace;
+
+  --radius-4xl: 2rem;
+
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+
+  --animate-marquee: marquee 48s linear infinite;
+  --animate-shimmer: shimmer 2.4s linear infinite;
+  --animate-float: float 7s ease-in-out infinite;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes shimmer {
+  from {
+    background-position: 200% 0;
+  }
+  to {
+    background-position: -200% 0;
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+:root {
+  color-scheme: dark;
+  --surface: var(--color-ink-950);
+  --hairline: color-mix(in oklab, var(--color-ink-50) 9%, transparent);
+  --hairline-strong: color-mix(in oklab, var(--color-ink-50) 16%, transparent);
+}
+
+@layer base {
+  * {
+    border-color: var(--hairline);
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background-color: var(--surface);
+    color: var(--color-ink-100);
+    font-family: var(--font-sans);
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    letter-spacing: -0.028em;
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  ::selection {
+    background-color: color-mix(in oklab, var(--color-brand-500) 45%, transparent);
+    color: var(--color-ink-50);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-accent-400);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@utility text-gradient {
+  background-image: linear-gradient(
+    100deg,
+    var(--color-ink-50) 0%,
+    var(--color-ink-50) 35%,
+    var(--color-accent-300) 75%,
+    var(--color-brand-400) 100%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+@utility surface-card {
+  background:
+    linear-gradient(
+      180deg,
+      color-mix(in oklab, var(--color-ink-50) 5%, transparent) 0%,
+      color-mix(in oklab, var(--color-ink-50) 1.5%, transparent) 100%
+    ),
+    var(--color-ink-950);
+  border: 1px solid var(--hairline);
+}
+
+@utility grid-backdrop {
+  background-image:
+    linear-gradient(to right, color-mix(in oklab, var(--color-ink-50) 5%, transparent) 1px, transparent 1px),
+    linear-gradient(to bottom, color-mix(in oklab, var(--color-ink-50) 5%, transparent) 1px, transparent 1px);
+  background-size: 64px 64px;
+}
