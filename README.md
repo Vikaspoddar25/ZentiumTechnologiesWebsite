@@ -143,7 +143,44 @@ the navigation and includes it in `sitemap.xml`.
 
 ## Deployment
 
-Pushing to `main` deploys to production on Vercel. Pull requests get a preview URL.
+Hosted on Vercel under the **Zentium Technologies** team.
+
+| | |
+| ------------------ | ------------------------------------------------------------ |
+| Project            | `zentium-technologies-website`                                |
+| Repository         | `Vikaspoddar25/ZentiumTechnologiesWebsite`                    |
+| Production branch  | `main`                                                        |
+| Preview URL        | https://zentium-technologies-website.vercel.app               |
+
+Pushing to `main` deploys to production. Pull requests get their own preview URL.
+
+Build settings are pinned in `vercel.json` (`framework: nextjs`) rather than in the
+dashboard, so the config is version controlled. Don't change the framework preset in
+the Vercel UI — edit `vercel.json` instead.
+
+### Adding the custom domain
+
+1. **Vercel → Project → Settings → Domains → Add.**
+   Enter `zentiumtechnologies.com` and add it. Then add `www.zentiumtechnologies.com`
+   as well and set it to redirect to the apex domain (Vercel offers this as a toggle).
+2. **Copy the DNS records Vercel shows you.** They will be either:
+   - **A record** — `@` → `76.76.21.21`, and **CNAME** — `www` → `cname.vercel-dns.com`
+   - or **nameservers**, if you prefer to let Vercel manage DNS entirely.
+3. **Add those records at your domain registrar** (wherever
+   `zentiumtechnologies.com` is registered — GoDaddy, Namecheap, Hostinger etc.).
+   Delete any old A/CNAME records pointing at the previous WordPress host first,
+   otherwise the domain will keep resolving there.
+4. **Wait for propagation** — usually 5–30 minutes, up to 48 hours worst case.
+   Vercel issues the SSL certificate automatically once DNS resolves. The domain shows
+   "Valid Configuration" when it's done.
+5. **Set the apex domain as the production domain** in Vercel so `www` redirects to it
+   and canonical URLs stay consistent.
+6. **Update `NEXT_PUBLIC_SITE_URL`** to `https://zentiumtechnologies.com` and redeploy
+   so sitemap, canonical URLs and Open Graph tags use the real domain.
+7. **Verify:** `https://zentiumtechnologies.com`, `/sitemap.xml`, `/robots.txt`, and
+   confirm `www` redirects to the apex.
+
+> Email is unaffected — adding these records does not touch your MX records.
 
 ---
 
