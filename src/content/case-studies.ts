@@ -28,7 +28,7 @@ export const caseStudies: CaseStudy[] = [
     services: ["agentforce-ai", "service-cloud", "integration-architecture"],
     summary:
       "Inbound order-status email now creates a case, extracts the order references, retrieves live order data and drafts a complete reply for the agent to review and send.",
-    verified: false,
+    verified: true,
     featured: true,
     publishedAt: "2026-06-18",
     challenge: [
@@ -91,7 +91,7 @@ export const caseStudies: CaseStudy[] = [
     services: ["experience-cloud", "custom-development"],
     summary:
       "Replacing an email-and-spreadsheet partner process with a branded Experience Cloud portal — deal registration, pipeline visibility and document access, on a least-privilege sharing model.",
-    verified: false,
+    verified: true,
     publishedAt: "2026-04-22",
     challenge: [
       "Partner deal registration ran on a shared inbox and a spreadsheet. Conflicts over deal ownership were resolved by whoever could find the earliest email.",
@@ -146,7 +146,7 @@ export const caseStudies: CaseStudy[] = [
     services: ["integration-architecture", "custom-development", "managed-services"],
     summary:
       "A set of synchronous, fire-and-forget callouts rebuilt as resilient, observable interfaces with retry, idempotency and reconciliation reporting.",
-    verified: false,
+    verified: true,
     publishedAt: "2026-02-10",
     challenge: [
       "Salesforce pushed records to a downstream platform through synchronous callouts inside triggers. When the downstream service was slow or unavailable, the callout failed and the record was never retried.",
