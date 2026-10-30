@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Inter, JetBrains_Mono } from "next/font/google";
 import { GoogleAnalytics } from "@next/third-parties/google";
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
@@ -82,6 +83,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Footer />
         <JsonLd data={[organizationSchema(), websiteSchema()]} />
         {gaId ? <GoogleAnalytics gaId={gaId} /> : null}
+        <Analytics />
       </body>
     </html>
   );
