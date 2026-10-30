@@ -18,9 +18,9 @@ export const team: TeamMember[] = [
     name: "Vikas Poddar",
     role: "Founder & Salesforce Technical Architect",
     location: "Rajasthan, India",
-    headline: "11x certified · Integration Architecture Designer · 14x Superbadge",
+    headline: "Integration Architecture Designer · org and integration design",
     bio: [
-      "Vikas has spent more than eight years on the Salesforce Lightning Platform, moving from developer to Lead Salesforce Consultant at Concretio, then Senior Salesforce Developer at Radical One, and Technical Lead at Allshore Technologies.",
+      "Vikas has built his Salesforce career across roles at Concretio, Radical One, and Allshore Technologies, progressing from developer to consultant and technical lead.",
       "He holds the Salesforce Certified Integration Architecture Designer credential and leads Zentium's architecture practice — org design, integration patterns, Agentforce implementation and AI governance.",
       "His focus is deliberately unfashionable: build systems that are still maintainable in year three, and leave the client's team able to own them.",
     ],
@@ -39,10 +39,10 @@ export const team: TeamMember[] = [
       "Salesforce JavaScript Developer I",
     ],
     highlights: [
-      { label: "Certifications", value: "11x" },
-      { label: "Superbadges", value: "14x" },
-      { label: "Trailhead", value: "4x Ranger" },
-      { label: "Experience", value: "8+ years" },
+      { label: "Focus", value: "Integration architecture" },
+      { label: "Platform", value: "Salesforce Lightning" },
+      { label: "Specialism", value: "Agentforce & AI governance" },
+      { label: "Approach", value: "Maintainable org design" },
     ],
     linkedin: "https://www.linkedin.com/in/vikaspoddar25/",
     initials: "VP",
@@ -52,7 +52,7 @@ export const team: TeamMember[] = [
     name: "Rishiraj Rathore",
     role: "Co-Founder & Senior Salesforce Developer",
     location: "Rajasthan, India",
-    headline: "6x certified · Agentforce Specialist · Sales, Service & Experience Cloud",
+    headline: "Agentforce Specialist · Sales, Service & Experience Cloud",
     bio: [
       "Rishiraj has built on the Salesforce platform since 2019, leading projects and code reviews across Sales Cloud, Service Cloud and Experience Cloud implementations.",
       "He is a certified Agentforce Specialist and holds Platform Developer I, Platform App Builder and Administrator credentials, with deep hands-on experience in Apex, Lightning Web Components, Aura, Visualforce, Flow and the approval process.",
@@ -74,20 +74,16 @@ export const team: TeamMember[] = [
       "Salesforce JavaScript Developer I",
     ],
     highlights: [
-      { label: "Certifications", value: "6x" },
-      { label: "Experience", value: "7+ years" },
-      { label: "Specialism", value: "Agentforce" },
+      { label: "Focus", value: "Agentforce & generative AI" },
       { label: "Clouds", value: "Sales · Service · Experience" },
+      { label: "Development", value: "Apex & Lightning Web Components" },
+      { label: "Integrations", value: "AWS, Outlook, QuickBooks, DocuSign & Stripe" },
     ],
     linkedin: "https://linkedin.com/in/rishi8955",
     initials: "RR",
   },
 ];
 
-/**
- * Named credentials verified from team profiles. The headline count is 17 across the team —
- * add the remaining credential names here as they are confirmed.
- */
 export const certifications = [
   "Integration Architecture Designer",
   "Agentforce Specialist",
@@ -98,5 +94,3 @@ export const certifications = [
   "JavaScript Developer I",
   "Salesforce Associate",
 ];
-
-export const certificationCount = 17;

@@ -28,7 +28,7 @@ export const caseStudies: CaseStudy[] = [
     services: ["agentforce-ai", "service-cloud", "integration-architecture"],
     summary:
       "Inbound order-status email now creates a case, extracts the order references, retrieves live order data and drafts a complete reply for the agent to review and send.",
-    verified: true,
+    verified: false,
     featured: true,
     publishedAt: "2026-06-18",
     challenge: [
@@ -195,8 +195,8 @@ export const caseStudies: CaseStudy[] = [
   },
 ];
 
-export function getCaseStudy(slug: string) {
-  return caseStudies.find((study) => study.slug === slug);
-}
+export const publishedCaseStudies = caseStudies.filter((study) => study.verified);
 
-export const featuredCaseStudy = caseStudies.find((study) => study.featured) ?? caseStudies[0];
+export function getCaseStudy(slug: string) {
+  return publishedCaseStudies.find((study) => study.slug === slug);
+}

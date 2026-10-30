@@ -81,7 +81,6 @@ export async function POST(request: Request) {
     ["Company", data.company || "—"],
     ["Phone", data.phone || "—"],
     ["Service", data.service || "—"],
-    ["Budget", data.budget || "—"],
   ];
 
   const html = `

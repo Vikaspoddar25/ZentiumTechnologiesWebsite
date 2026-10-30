@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { cloneElement, useState, type ReactElement } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { ArrowRight, CheckCircle2, Loader2 } from "lucide-react";
@@ -8,7 +8,6 @@ import { Button } from "@/components/ui/button";
 import {
   contactSchema,
   serviceOptions,
-  budgetOptions,
   type ContactInput,
 } from "@/lib/contact-schema";
 import { cn } from "@/lib/utils";
@@ -27,7 +26,7 @@ export function ContactForm() {
     formState: { errors, isSubmitting },
   } = useForm<ContactInput>({
     resolver: zodResolver(contactSchema),
-    defaultValues: { service: "", budget: "" },
+    defaultValues: { service: "" },
   });
 
   const onSubmit = handleSubmit(async (values) => {
@@ -111,32 +110,10 @@ export function ContactForm() {
           />
         </Field>
 
-        <Field label="Phone" error={errors.phone?.message}>
-          <input
-            {...register("phone")}
-            id="phone"
-            type="tel"
-            autoComplete="tel"
-            placeholder="Include country code"
-            className={fieldClasses}
-          />
-        </Field>
-
         <Field label="What do you need?" error={errors.service?.message}>
           <select {...register("service")} id="service" className={cn(fieldClasses, "appearance-none")}>
             <option value="">Select a service</option>
             {serviceOptions.map((option) => (
-              <option key={option} value={option}>
-                {option}
-              </option>
-            ))}
-          </select>
-        </Field>
-
-        <Field label="Budget range" error={errors.budget?.message}>
-          <select {...register("budget")} id="budget" className={cn(fieldClasses, "appearance-none")}>
-            <option value="">Select a range</option>
-            {budgetOptions.map((option) => (
               <option key={option} value={option}>
                 {option}
               </option>
@@ -201,9 +178,14 @@ function Field({
   label: string;
   error?: string;
   required?: boolean;
-  children: React.ReactElement<{ id?: string }>;
+  children: ReactElement<{
+    id?: string;
+    "aria-describedby"?: string;
+    "aria-invalid"?: boolean;
+  }>;
 }) {
   const id = children.props.id;
+  const errorId = `${id}-error`;
 
   return (
     <div className="flex flex-col gap-2">
@@ -217,9 +199,12 @@ function Field({
           <span className="ml-1.5 text-xs font-normal text-ink-400">(optional)</span>
         )}
       </label>
-      {children}
+      {cloneElement(children, {
+        "aria-describedby": error ? errorId : undefined,
+        "aria-invalid": Boolean(error),
+      })}
       {error ? (
-        <p role="alert" className="text-xs text-red-300">
+        <p id={errorId} role="alert" className="text-xs text-red-300">
           {error}
         </p>
       ) : null}

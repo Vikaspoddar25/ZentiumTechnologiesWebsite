@@ -18,8 +18,8 @@ export function Footer() {
           <div className="max-w-sm">
             <Logo showTagline />
             <p className="mt-6 text-sm leading-relaxed text-ink-300">
-              A Salesforce consultancy led by 17x certified engineers — architecture, Agentforce,
-              integrations and the web platforms around them.
+              An independent Salesforce consultancy for architecture, Agentforce, integrations, and
+              the web platforms around them.
             </p>
 
             <ul className="mt-8 space-y-3 text-sm">

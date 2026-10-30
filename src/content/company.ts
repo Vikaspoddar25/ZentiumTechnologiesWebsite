@@ -27,12 +27,12 @@ export const process = [
 
 export const differentiators = [
   {
-    title: "17 Salesforce certifications, two senior engineers",
+    title: "Certified engineers, one senior-led team",
     body: "You work directly with the people who architect and build your solution. No account layer, no junior offshore team you never meet.",
   },
   {
-    title: "Agentforce in production, not in a slide deck",
-    body: "We have shipped autonomous case handling end to end — inbound email to drafted response — with grounding, guardrails and human review built in.",
+    title: "Agentforce designed for real service workflows",
+    body: "We plan for trusted grounding, configuration-level guardrails and human review before an agent reaches a live service queue.",
   },
   {
     title: "Fixed scope, fixed price",

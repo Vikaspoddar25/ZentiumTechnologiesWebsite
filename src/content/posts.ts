@@ -109,7 +109,7 @@ export const posts: Post[] = [
       },
       {
         type: "p",
-        text: "Our first production Agentforce build followed exactly that shape: inbound order-status email, parsed for order references, resolved against live order data, with a drafted reply for agent review. Unambiguous inputs, deterministic lookups, human approval on the way out.",
+        text: "An illustrative order-status workflow can follow that shape: accept inbound email, extract order references, retrieve live data, and prepare a reply for agent review. Keep inputs unambiguous, lookups deterministic, and a person accountable for the response.",
       },
       { type: "h2", text: "The short version" },
       {

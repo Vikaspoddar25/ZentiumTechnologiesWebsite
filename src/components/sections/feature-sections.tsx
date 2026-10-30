@@ -1,12 +1,9 @@
-import Link from "next/link";
 import { ArrowUpRight, Sparkles } from "lucide-react";
 import { Container } from "@/components/ui/container";
 import { Section, SectionHeading, Eyebrow } from "@/components/ui/section";
 import { ButtonLink } from "@/components/ui/button";
-import { Badge } from "@/components/ui/card";
 import { Reveal, Stagger, StaggerItem } from "@/components/motion/reveal";
 import { Accordion } from "@/components/ui/accordion";
-import { featuredCaseStudy } from "@/content/case-studies";
 import { homeFaqs } from "@/content/company";
 
 const agentSteps = [
@@ -32,27 +29,26 @@ export function AgentforceSpotlight() {
       <Container className="relative py-20 sm:py-28">
         <div className="grid gap-14 lg:grid-cols-[1fr_1fr] lg:items-center lg:gap-20">
           <Reveal>
-            <Eyebrow>Agentforce</Eyebrow>
+            <Eyebrow>Agentforce · illustrative workflow</Eyebrow>
             <h2 className="mt-6 text-3xl font-semibold leading-[1.12] text-ink-50 sm:text-4xl lg:text-[2.75rem]">
-              AI agents that close cases,
-              <span className="block text-ink-400">not demos that impress a boardroom.</span>
+              Agentforce needs more
+              <span className="block text-ink-400">than a good demo.</span>
             </h2>
             <p className="mt-6 text-base leading-relaxed text-ink-300">
-              Agentforce only works when it is grounded in data the agent is genuinely permitted to
-              see, constrained by guardrails enforced in configuration rather than in prose, and
-              measured against a baseline you captured before launch.
+              A responsible service workflow starts with the data an agent may access, guardrails
+              enforced in configuration, and a baseline to measure before launch.
             </p>
             <p className="mt-4 text-base leading-relaxed text-ink-300">
-              Our first production build handles inbound order-status email end to end — with a human
-              reviewing every outbound reply.
+              For an order-status enquiry, that could mean retrieving live order details and
+              preparing a reply for an agent to review rather than sending an autonomous answer.
             </p>
             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
               <ButtonLink href="/services/agentforce-ai">
                 Agentforce services
                 <ArrowUpRight aria-hidden className="size-4" />
               </ButtonLink>
-              <ButtonLink href={`/case-studies/${featuredCaseStudy.slug}`} variant="secondary">
-                Read the case study
+              <ButtonLink href="/contact#enquiry" variant="secondary">
+                Talk through your use case
               </ButtonLink>
             </div>
           </Reveal>
@@ -83,52 +79,6 @@ export function AgentforceSpotlight() {
         </div>
       </Container>
     </section>
-  );
-}
-
-export function FeaturedCaseStudy() {
-  const study = featuredCaseStudy;
-
-  return (
-    <Section className="border-y border-white/8">
-      <Reveal>
-        <Link
-          href={`/case-studies/${study.slug}`}
-          className="group surface-card block overflow-hidden rounded-4xl p-8 transition duration-300 ease-[var(--ease-out-expo)] hover:border-brand-500/40 sm:p-12"
-        >
-          <div className="flex flex-wrap items-center gap-2.5">
-            <Badge tone="brand">Case study</Badge>
-            <Badge>{study.industry}</Badge>
-          </div>
-
-          <h2 className="mt-7 max-w-3xl text-2xl font-semibold leading-snug text-ink-50 sm:text-3xl lg:text-4xl">
-            {study.title}
-          </h2>
-          <p className="mt-5 max-w-2xl text-base leading-relaxed text-ink-300">{study.summary}</p>
-
-          <dl className="mt-10 grid gap-8 border-t border-white/8 pt-8 sm:grid-cols-2 lg:grid-cols-4">
-            {study.results.map((result) => (
-              <div key={result.label}>
-                <dt className="sr-only">{result.label}</dt>
-                <dd>
-                  <span className="block text-2xl font-semibold text-ink-50 sm:text-3xl">
-                    {result.value}
-                  </span>
-                  <span className="mt-2 block text-xs leading-relaxed text-ink-400">
-                    {result.label}
-                  </span>
-                </dd>
-              </div>
-            ))}
-          </dl>
-
-          <span className="mt-8 inline-flex items-center gap-1.5 text-sm font-medium text-accent-300 transition-colors group-hover:text-accent-400">
-            Read the full breakdown
-            <ArrowUpRight aria-hidden className="size-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-          </span>
-        </Link>
-      </Reveal>
-    </Section>
   );
 }
 

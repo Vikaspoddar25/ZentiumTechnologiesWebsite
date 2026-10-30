@@ -5,7 +5,7 @@ import { Card } from "@/components/ui/card";
 import { Reveal, Stagger, StaggerItem } from "@/components/motion/reveal";
 import { ButtonLink } from "@/components/ui/button";
 import { process, differentiators, values } from "@/content/company";
-import { certifications, certificationCount } from "@/content/team";
+import { certifications } from "@/content/team";
 
 export function Narrative() {
   return (
@@ -129,14 +129,11 @@ export function CertificationsWall() {
         <div className="relative grid gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:items-center">
           <div>
             <Eyebrow>Credentials</Eyebrow>
-            <p className="mt-6 text-5xl font-semibold tracking-tight text-ink-50 sm:text-6xl">
-              {certificationCount}
-              <span className="text-brand-400">x</span>
-            </p>
-            <p className="mt-3 text-base text-ink-200">Salesforce certifications across the team</p>
+            <h2 className="mt-6 text-2xl font-semibold tracking-tight text-ink-50 sm:text-3xl">
+              Selected Salesforce credentials
+            </h2>
             <p className="mt-4 max-w-sm text-sm leading-relaxed text-ink-400">
-              Including Integration Architecture Designer and Agentforce Specialist — the two
-              credentials that matter most for the work we are usually called in to do.
+              Credentials held across the team, including integration architecture and Agentforce.
             </p>
           </div>
 

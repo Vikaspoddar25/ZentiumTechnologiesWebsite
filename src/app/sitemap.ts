@@ -2,7 +2,7 @@ import type { MetadataRoute } from "next";
 import { siteConfig } from "@/content/site";
 import { services } from "@/content/services";
 import { industries } from "@/content/industries";
-import { caseStudies } from "@/content/case-studies";
+import { publishedCaseStudies } from "@/content/case-studies";
 import { posts } from "@/content/posts";
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -40,7 +40,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly" as const,
       priority: 0.7,
     })),
-    ...caseStudies.map((study) => ({
+    ...publishedCaseStudies.map((study) => ({
       url: `${siteConfig.url}/case-studies/${study.slug}`,
       lastModified: new Date(study.publishedAt),
       changeFrequency: "yearly" as const,

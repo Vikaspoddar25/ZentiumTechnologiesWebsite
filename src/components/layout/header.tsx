@@ -117,7 +117,7 @@ export function Header() {
 
           <button
             type="button"
-            className="inline-flex size-10 items-center justify-center rounded-full border border-white/10 text-ink-100 lg:hidden"
+            className="inline-flex size-11 items-center justify-center rounded-full border border-white/10 text-ink-100 lg:hidden"
             aria-expanded={mobileOpen}
             aria-controls="mobile-nav"
             aria-label={mobileOpen ? "Close menu" : "Open menu"}
@@ -197,20 +197,19 @@ function ServicesMenu() {
       </ul>
       <div className="surface-card rounded-3xl p-6">
         <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-accent-300">
-          Featured
+          Agentforce
         </p>
         <p className="mt-3 text-base font-medium text-ink-50">
-          Agentforce, in production
+          Start with a workflow that fits
         </p>
         <p className="mt-2 text-sm leading-relaxed text-ink-300">
-          Inbound order-status email resolved end to end — parsed, enriched from live order data and
-          drafted for agent review.
+          Assess data access, guardrails, and human review before choosing a service use case.
         </p>
         <Link
-          href="/case-studies/agentforce-order-status-automation"
+          href="/services/agentforce-ai"
           className="mt-4 inline-block text-sm font-medium text-accent-300 hover:text-accent-400"
         >
-          Read the case study →
+          Explore Agentforce services →
         </Link>
       </div>
     </div>

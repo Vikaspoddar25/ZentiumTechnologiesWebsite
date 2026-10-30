@@ -182,7 +182,7 @@ export const services: Service[] = [
       {
         question: "What is a realistic first Agentforce use case?",
         answer:
-          "Something high-volume, low-ambiguity and data-backed — order status, appointment changes, account lookups, knowledge answers. Our first production agent handled inbound order-status email end to end.",
+          "Something high-volume, low-ambiguity and data-backed — order status, appointment changes, account lookups, or knowledge answers. An order-status workflow could retrieve live data and prepare a reply for an agent to review.",
       },
       {
         question: "Do we need Data Cloud?",

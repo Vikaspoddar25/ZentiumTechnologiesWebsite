@@ -10,7 +10,7 @@ import { Accordion } from "@/components/ui/accordion";
 import { Reveal, Stagger, StaggerItem } from "@/components/motion/reveal";
 import { CtaBand } from "@/components/layout/cta-band";
 import { services, getService } from "@/content/services";
-import { caseStudies } from "@/content/case-studies";
+import { publishedCaseStudies } from "@/content/case-studies";
 import { buildMetadata } from "@/lib/seo";
 import { JsonLd, breadcrumbSchema, faqSchema } from "@/lib/schema";
 
@@ -43,7 +43,9 @@ export default async function ServiceDetailPage({
     .map((relatedSlug) => getService(relatedSlug))
     .filter((item): item is NonNullable<typeof item> => Boolean(item));
 
-  const relatedStudies = caseStudies.filter((study) => study.services.includes(service.slug));
+  const relatedStudies = publishedCaseStudies.filter((study) =>
+    study.services.includes(service.slug),
+  );
 
   return (
     <>

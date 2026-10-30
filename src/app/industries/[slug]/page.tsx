@@ -10,7 +10,7 @@ import { Reveal, Stagger, StaggerItem } from "@/components/motion/reveal";
 import { CtaBand } from "@/components/layout/cta-band";
 import { industries, getIndustry } from "@/content/industries";
 import { getService } from "@/content/services";
-import { caseStudies } from "@/content/case-studies";
+import { publishedCaseStudies } from "@/content/case-studies";
 import { buildMetadata } from "@/lib/seo";
 import { JsonLd, breadcrumbSchema } from "@/lib/schema";
 
@@ -43,7 +43,9 @@ export default async function IndustryDetailPage({
     .map((serviceSlug) => getService(serviceSlug))
     .filter((item): item is NonNullable<typeof item> => Boolean(item));
 
-  const relatedStudies = caseStudies.filter((study) => study.industrySlug === industry.slug);
+  const relatedStudies = publishedCaseStudies.filter(
+    (study) => study.industrySlug === industry.slug,
+  );
 
   return (
     <>

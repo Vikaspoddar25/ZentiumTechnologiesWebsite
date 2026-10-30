@@ -13,7 +13,7 @@ import { JsonLd, breadcrumbSchema } from "@/lib/schema";
 export const metadata = buildMetadata({
   title: "About Zentium Technologies",
   description:
-    "A two-person Salesforce consultancy with 17 certifications between them — founded in 2025, based in Rajasthan, India, working with clients worldwide.",
+    "Meet the engineers behind Zentium Technologies, an independent Salesforce consultancy founded in 2025 and based in Rajasthan, India.",
   path: "/about",
 });
 
@@ -22,7 +22,7 @@ export default function AboutPage() {
     <>
       <PageHero
         eyebrow="About"
-        title="Two senior engineers. Seventeen certifications. No account layer."
+        title="Two senior engineers. One team from first call to handover."
         description="Zentium Technologies exists because the people who understand your architecture and the people who talk to you are usually not the same people. We removed the gap by staying small."
         breadcrumbs={[{ name: "About", path: "/about" }]}
       />
@@ -35,9 +35,8 @@ export default function AboutPage() {
           <Reveal delay={0.1}>
             <div className="flex flex-col gap-5 text-[1.05rem] leading-relaxed text-ink-200">
               <p>
-                Between us we have spent more than fifteen years inside Salesforce consultancies,
-                delivering implementations for clients who mostly never met the architect who
-                designed their org.
+                We have worked inside Salesforce consultancies, delivering implementations for
+                clients who often never met the architect who designed their org.
               </p>
               <p>
                 We kept seeing the same failure. A project is scoped by someone commercial, designed

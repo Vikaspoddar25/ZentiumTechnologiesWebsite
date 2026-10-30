@@ -4,7 +4,6 @@ import { ButtonLink } from "@/components/ui/button";
 import { Eyebrow } from "@/components/ui/section";
 import { NodeField } from "@/components/motion/node-field";
 import { Reveal } from "@/components/motion/reveal";
-import { CountUp } from "@/components/motion/count-up";
 import { siteConfig } from "@/content/site";
 
 const clouds = [
@@ -44,20 +43,20 @@ export function Hero() {
 
           <Reveal delay={0.16}>
             <p className="mx-auto mt-7 max-w-2xl text-base leading-relaxed text-ink-300 sm:text-lg">
-              We design, build and support Salesforce for companies that need it to work properly —
-              Agentforce in production, integrations that survive outages, and portals that pass a
-              security review. Seventeen certifications, two senior engineers, no account layer.
+              We help growing teams design, build, and support Salesforce that stays maintainable
+              as the business changes. Work directly with the engineers who scope and deliver your
+              project.
             </p>
           </Reveal>
 
           <Reveal delay={0.24}>
             <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:items-center">
               <ButtonLink href="/contact#enquiry" size="lg">
-                Get a proposal
+                Talk to an engineer
                 <ArrowRight aria-hidden className="size-4" />
               </ButtonLink>
-              <ButtonLink href="/case-studies" variant="secondary" size="lg">
-                See how we work
+              <ButtonLink href="/services" variant="secondary" size="lg">
+                Explore services
               </ButtonLink>
             </div>
           </Reveal>
@@ -65,31 +64,33 @@ export function Hero() {
           <Reveal delay={0.32}>
             <p className="mt-6 inline-flex items-center gap-2 text-xs text-ink-400">
               <ShieldCheck aria-hidden className="size-4 text-accent-400" />
-              Fixed scope, fixed price — agreed before a single field is built
+              Clear scope and price, agreed before the build starts
             </p>
           </Reveal>
         </div>
 
         <Reveal delay={0.4}>
-          <dl className="mx-auto mt-20 grid max-w-4xl grid-cols-2 gap-px overflow-hidden rounded-3xl border border-white/8 bg-white/8 lg:grid-cols-4">
-            {siteConfig.stats.map((stat) => (
-              <div key={stat.label} className="bg-ink-950 px-6 py-7 text-center">
-                <dt className="sr-only">{stat.label}</dt>
-                <dd>
-                  <span className="block text-3xl font-semibold tracking-tight text-ink-50 sm:text-4xl">
-                    {"raw" in stat && stat.raw ? (
-                      stat.raw
-                    ) : (
-                      <CountUp value={stat.value} suffix={stat.suffix} />
-                    )}
-                  </span>
-                  <span className="mt-2 block text-xs leading-relaxed text-ink-400">
-                    {stat.label}
-                  </span>
-                </dd>
-              </div>
+          <ul className="mx-auto mt-20 grid max-w-5xl gap-px overflow-hidden rounded-3xl border border-white/8 bg-white/8 sm:grid-cols-3">
+            {[
+              {
+                title: "Senior-led delivery",
+                text: "Work directly with the engineers who scope and build your solution.",
+              },
+              {
+                title: "Scope before build",
+                text: "Agree on the plan and price before implementation begins.",
+              },
+              {
+                title: "A useful handover",
+                text: "Keep the architecture, documentation, and source we build.",
+              },
+            ].map((point) => (
+              <li key={point.title} className="bg-ink-950 px-6 py-7 text-center">
+                <h2 className="text-base font-medium text-ink-50">{point.title}</h2>
+                <p className="mt-2 text-sm leading-relaxed text-ink-400">{point.text}</p>
+              </li>
             ))}
-          </dl>
+          </ul>
         </Reveal>
 
         <Reveal delay={0.48}>

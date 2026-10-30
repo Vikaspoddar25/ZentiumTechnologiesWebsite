@@ -125,7 +125,7 @@ export const industries: Industry[] = [
       },
       {
         title: "Automated order-status handling",
-        body: "Inbound email parsed for order references, live order data retrieved, and a drafted response prepared for agent review — our first production Agentforce build.",
+        body: "An order-status workflow can parse inbound email for order references, retrieve live order data, and prepare a response for agent review.",
       },
       {
         title: "Returns & exchanges",

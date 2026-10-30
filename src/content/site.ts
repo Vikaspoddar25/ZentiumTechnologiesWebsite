@@ -3,7 +3,7 @@ export const siteConfig = {
   shortName: "Zentium",
   tagline: "Seamless Tech. Smarter Solutions.",
   description:
-    "Zentium Technologies is a Salesforce consultancy led by 17x certified engineers. We design, build and support Agentforce, Sales Cloud, Service Cloud, Experience Cloud and integration solutions — plus the high-performance web platforms around them.",
+    "Zentium Technologies is an independent Salesforce consultancy. We design, build and support Agentforce, Sales Cloud, Service Cloud, Experience Cloud and integration solutions — plus the web platforms around them.",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://zentiumtechnologies.com",
   founded: 2025,
   email: "info.zentiumtechnologies@gmail.com",
@@ -23,12 +23,6 @@ export const siteConfig = {
     linkedin: "https://www.linkedin.com/in/vikaspoddar25/",
   },
   calendlyUrl: process.env.NEXT_PUBLIC_CALENDLY_URL ?? "",
-  stats: [
-    { value: 17, suffix: "x", label: "Salesforce certifications" },
-    { value: 10, suffix: "+", label: "Projects delivered" },
-    { value: 8, suffix: "+", label: "Years of platform experience" },
-    { value: 24, suffix: "/7", label: "Support coverage", raw: "24/7" },
-  ],
 } as const;
 
 export type NavItem = {

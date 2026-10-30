@@ -3,7 +3,6 @@ import { Narrative, ProcessSection, WhyZentium, CertificationsWall } from "@/com
 import { ServicesGrid, IndustriesGrid } from "@/components/sections/grids";
 import {
   AgentforceSpotlight,
-  FeaturedCaseStudy,
   FaqSection,
 } from "@/components/sections/feature-sections";
 import { CtaBand } from "@/components/layout/cta-band";
@@ -19,7 +18,6 @@ export default function HomePage() {
       <AgentforceSpotlight />
       <IndustriesGrid />
       <ProcessSection />
-      <FeaturedCaseStudy />
       <WhyZentium />
       <CertificationsWall />
       <FaqSection />

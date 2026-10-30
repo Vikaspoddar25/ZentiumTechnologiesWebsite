@@ -1,4 +1,4 @@
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { PageHero } from "@/components/ui/page-hero";
@@ -6,14 +6,14 @@ import { Section, SectionHeading } from "@/components/ui/section";
 import { Card, Badge } from "@/components/ui/card";
 import { Reveal, Stagger, StaggerItem } from "@/components/motion/reveal";
 import { CtaBand } from "@/components/layout/cta-band";
-import { caseStudies, getCaseStudy } from "@/content/case-studies";
+import { caseStudies, publishedCaseStudies, getCaseStudy } from "@/content/case-studies";
 import { getService } from "@/content/services";
 import { formatDate } from "@/lib/utils";
 import { buildMetadata } from "@/lib/seo";
 import { JsonLd, breadcrumbSchema } from "@/lib/schema";
 
 export function generateStaticParams() {
-  return caseStudies.map((study) => ({ slug: study.slug }));
+  return publishedCaseStudies.map((study) => ({ slug: study.slug }));
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
@@ -32,8 +32,9 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
 export default async function CaseStudyPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  const study = getCaseStudy(slug);
+  const study = caseStudies.find((item) => item.slug === slug);
   if (!study) notFound();
+  if (!study.verified) redirect("/case-studies");
 
   const relatedServices = study.services
     .map((serviceSlug) => getService(serviceSlug))

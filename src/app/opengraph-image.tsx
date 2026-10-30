@@ -75,7 +75,7 @@ export default function OpengraphImage() {
         </div>
 
         <div style={{ display: "flex", gap: 40, fontSize: 22, color: "#7dd3fc" }}>
-          <span>17x Salesforce certified</span>
+          <span>Independent Salesforce consultancy</span>
           <span style={{ color: "#1e293b" }}>|</span>
           <span>zentiumtechnologies.com</span>
         </div>
