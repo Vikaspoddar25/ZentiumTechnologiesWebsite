@@ -4,6 +4,7 @@ import { GoogleAnalytics } from "@next/third-parties/google";
 import "./globals.css";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
+import { EngineerPopup } from "@/components/layout/engineer-popup";
 import { JsonLd, organizationSchema, websiteSchema } from "@/lib/schema";
 import { siteConfig } from "@/content/site";
 
@@ -80,6 +81,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Header />
         <main id="main">{children}</main>
         <Footer />
+        <EngineerPopup />
         <JsonLd data={[organizationSchema(), websiteSchema()]} />
         {gaId ? <GoogleAnalytics gaId={gaId} /> : null}
       </body>
